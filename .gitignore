@@ -1,0 +1,38 @@
+# ===== Python =====
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# ===== Virtual Environment =====
+venv/
+env/
+.venv/
+ENV/
+
+# ===== Django =====
+db.sqlite3
+*.log
+staticfiles/
+media/
+
+# ===== Environment Variables (Secrets) =====
+.env
+.env.*
+
+# ===== IDE / Editor =====
+.vscode/
+.idea/
+*.swp
+
+# ===== OS Files =====
+.DS_Store
+Thumbs.db
+
+# ===== Docker =====
+docker-compose.override.yml
+
+# ===== AWS / Keys =====
+*.pem
+aws_credentials
