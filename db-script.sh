@@ -1,4 +1,7 @@
-#! /bin/bash
+#!/bin/bash
 
+echo "Waiting for DB..."
 sleep 10
-python3 manage.py migrate
+
+python manage.py migrate
+python manage.py collectstatic --noinput

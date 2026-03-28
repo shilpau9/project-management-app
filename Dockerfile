@@ -13,5 +13,13 @@ RUN apt-get update && apt-get install -y \
 
 COPY requirements.txt /app
 RUN pip3 install -r requirements.txt --no-cache-dir
-COPY . /app 
-CMD bash -c "./db-script.sh && python3 manage.py runserver 0.0.0.0:8000"
+COPY . .
+
+# Move into Django project folder
+WORKDIR /app/ves
+
+# Give permission to script
+RUN chmod +x ../db-script.sh
+
+# Run DB script + start server
+CMD bash -c "../db-script.sh && gunicorn ves.wsgi:application --bind 0.0.0.0:8000"

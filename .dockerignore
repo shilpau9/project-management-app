@@ -1,26 +1,6 @@
-# Git
 .git
-.gitignore
-
-# Python cache
-__pycache__/
+__pycache__
 *.pyc
-
-# Virtual environments
-venv/
-env/
-.venv/
-
-# Secrets
-.env
-.env.*
-
-# Django
 db.sqlite3
-*.log
-media/
-staticfiles/
-
-# OS
-.DS_Store
-Thumbs.db
+.env
+venv

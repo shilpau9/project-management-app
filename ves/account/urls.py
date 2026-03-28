@@ -1,7 +1,7 @@
 from django.urls import path
 
 from . import views
-
+from .views import logout_view
 
 app_name = 'account'
 
@@ -9,4 +9,5 @@ app_name = 'account'
 urlpatterns = [
     path('signup/', views.signup, name='signup'),
     path('login/', views.login, name='login'),
+    path('logout/', logout_view, name='logout'),
 ]
