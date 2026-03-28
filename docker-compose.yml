@@ -7,11 +7,22 @@ services:
       - "8000:8000"
     depends_on:
       - db
+    environment:
+      DB_NAME: projectdb
+      DB_USER: user
+      DB_PASSWORD: password
+      DB_HOST: db
+      DB_PORT: 3306
+    env_file:
+      - .env
 
   db:
     image: mysql:8
+    restart: always
     environment:
-      MYSQL_DATABASE: mydb
+      MYSQL_DATABASE: projectdb
       MYSQL_USER: user
       MYSQL_PASSWORD: password
       MYSQL_ROOT_PASSWORD: root
+    ports:
+      - "3307:3306"
